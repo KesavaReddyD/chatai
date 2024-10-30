@@ -10,7 +10,7 @@ const app = express();
 //middlewares
 
 const corsconfig = {
-    origin: process.env.ORIGIN_URL,
+    origin: "https://projectchatai.vercel.app/",
     credentials: true
 }
 app.use(cors(corsconfig));
