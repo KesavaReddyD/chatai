@@ -41,6 +41,8 @@ export const signUp = async (
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             signed: true,
+            secure: true,
+            sameSite: 'none',
             domain: "projectchatai.vercel.app",
             path: "/",
             httpOnly: true,
@@ -71,6 +73,8 @@ export const logIn = async (
 
     res.clearCookie(COOKIE_NAME , {
         signed: true,
+        secure: true,
+        sameSite: 'none',
         domain: "projectchatai.vercel.app",
         path: "/",
         httpOnly: true
@@ -83,6 +87,8 @@ export const logIn = async (
 
     res.cookie(COOKIE_NAME, token, {
         signed: true,
+        secure: true,
+        sameSite: 'none',
         domain: "projectchatai.vercel.app",
         path: "/",
         httpOnly: true,
@@ -119,6 +125,8 @@ export const logout = async(
     res.clearCookie(COOKIE_NAME, {
         httpOnly: true,
         signed: true,
+        secure: true,
+        sameSite: 'none',
         domain: "projectchatai.vercel.app",
         path: '/'
     });
