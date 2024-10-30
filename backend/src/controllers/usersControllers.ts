@@ -24,6 +24,8 @@ export const signUp = async (
     next: NextFunction
 ) => {
     try {
+        console.log(process.env.ORIGIN_URL);
+        console.log("hii");
         const { name, email, password } = req.body;
         const temp = await User.findOne({email})
         if(temp) {
