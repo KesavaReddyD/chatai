@@ -15,11 +15,11 @@ export const validator = (validations : ValidationChain[]) => {
 
         }
         const errors = validationResult(req);
-        // console.log(errors);
+        console.error(errors);
         if(!errors.isEmpty()){
             return res.status(400).json({"message" : "some error", "error": errors.array()});
         }
-        // console.log("validation crossed");
+        console.log("validation crossed");
         next();
     }
 }

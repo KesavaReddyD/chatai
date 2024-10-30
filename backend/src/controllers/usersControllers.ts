@@ -79,7 +79,7 @@ export const logIn = async (
         path: "/",
         httpOnly: true
     });
-
+    console.error(COOKIE_NAME);
     const token = createToken(user._id.toString(), user.email, "7d");
     const expires = new Date();
     // console.log(expires)
@@ -94,6 +94,7 @@ export const logIn = async (
         httpOnly: true,
         expires
     });
+    console.error(user);
     
     res.status(200).json(user);
 };
