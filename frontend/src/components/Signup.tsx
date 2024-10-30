@@ -24,11 +24,8 @@ const Signup = () => {
   const validatepass = (password: string) => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
     setValidpass(passwordRegex.test(password));
-    console.log(`password validation: ${validpass}`);
     if(password != conpass) setPasswordMatch(false);
     else setPasswordMatch(true);
-
-    console.log(`password matched: ${passwordmatch}`);
   }
 
   const auth = useAuth();

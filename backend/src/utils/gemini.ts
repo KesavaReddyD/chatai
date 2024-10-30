@@ -1,7 +1,6 @@
 import {GoogleGenerativeAI} from "@google/generative-ai";
 import dotenv from "dotenv";
 dotenv.config();
-console.log(process.env.PORT);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_KEY);
 export const geminimodel = genAI.getGenerativeModel({model: "gemini-1.5-flash"});
 

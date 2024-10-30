@@ -86,7 +86,6 @@ const Chat = () => {
         const res = await axios.post('/chat/new', {message: localchat.content}, {
           withCredentials: true
         });
-        console.log(res);
         
         if(res.status === 200){
           const localaichat = {
@@ -109,7 +108,7 @@ const Chat = () => {
       const res = await axios.delete('/chat/delete', {
         withCredentials: true
       });
-      console.log(res);
+      // console.log(res);
       if(res.status === 200){
         setChats([]);
       }

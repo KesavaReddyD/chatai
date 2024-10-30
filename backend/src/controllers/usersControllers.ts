@@ -24,12 +24,9 @@ export const signUp = async (
     next: NextFunction
 ) => {
     try {
-        console.log(process.env.ORIGIN_URL);
-        console.log("hii");
         const { name, email, password } = req.body;
         const temp = await User.findOne({email})
         if(temp) {
-            console.log(temp);
             return res.status(409).json({message: "user already exists"});
         }
         const encryptedPassword = await hash(password, 10);
@@ -94,7 +91,6 @@ export const logIn = async (
         httpOnly: true,
         expires
     });
-    console.error(user);
     
     res.status(200).json({name: user.name, email: user.email});
 };
@@ -111,7 +107,6 @@ export const verifyUser = async(
         }
         res.status(200).json({message: "OK", id: data.id, name: data.name ,email: data.email});
     }catch(err){
-        console.log(err);
         res.status(200).json({message: "error", cause: err.message});
     }
 

@@ -15,9 +15,7 @@ export const verifyToken = (
     res: Response,
     next: NextFunction
 ) => {
-    console.error(COOKIE_NAME);
     const token = req.signedCookies[`${COOKIE_NAME}`];
-    console.error(token);
     if(!token || token.trim() === ''){
         return res.status(401).json({ message: "Token Not Received"});
     }
@@ -26,7 +24,6 @@ export const verifyToken = (
             return res.status(401).json({ message: "Token Expired" });
         }else{
             res.locals.jwtData = success;
-            console.log("token verified");
             return next();
         }
     });
