@@ -20,6 +20,11 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //remove at production
 app.use(morgan('dev'));
 
+app.use('api/test', (req, res) => {
+    console.error("there is mistake");
+    res.status(200).json({message: "happy ga vundu mowa"});
+})
+
 app.use('/api/v1', appRouter);
 
 
