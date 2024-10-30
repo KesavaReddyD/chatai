@@ -18,9 +18,9 @@ app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
     
 //remove at production
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
-app.use('api/test', (req, res) => {
+app.get('/api/test', (req, res) => {
     console.error("there is mistake");
     res.status(200).json({message: "happy ga vundu mowa"});
 })
