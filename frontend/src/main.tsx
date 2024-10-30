@@ -6,9 +6,8 @@ import "./index.css";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import {Toaster} from "react-hot-toast";
 import axios from "axios";
-import dotenv from 'dotenv';
-dotenv.config();
-axios.defaults.baseURL= process.env.BASE_URL;
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+axios.defaults.baseURL= BASE_URL;
 axios.defaults.withCredentials=true;
 
 
