@@ -62,11 +62,11 @@ export const logIn = async (
     const {email, password} = req.body;
     const user = await User.findOne({email: email});
     if(!user){
-        res.status(404).json({"message" : "user not found"});
+        return res.status(404).json({"message" : "user not found"});
     }
     const result = await compare(password, user.password);
     if(!result){
-        res.status(401).json({"message" : "wrong password"})
+        return res.status(401).json({"message" : "wrong password"})
     }
 
     res.clearCookie(COOKIE_NAME , {
