@@ -8,6 +8,7 @@ dotenv.config();
 const app = express();
 
 //middlewares
+console.log(process.env.ORIGIN_URL);
 const corsconfig = {
     origin: process.env.ORIGIN_URL,
     credentials: true
