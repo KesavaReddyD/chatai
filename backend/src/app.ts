@@ -9,7 +9,7 @@ const app = express();
 
 //middlewares
 const corsconfig = {
-    origin: 'http://localhost:5173/',
+    origin: process.env.ORIGIN_URL,
     credentials: true
 }
 app.use(cors(corsconfig));
