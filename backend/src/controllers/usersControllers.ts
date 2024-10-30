@@ -42,8 +42,8 @@ export const signUp = async (
         res.cookie(COOKIE_NAME, token, {
             signed: true,
             secure: true,
-            sameSite: 'lax',
-            domain: "projectchatai.vercel.app",
+            sameSite: 'none',
+            // domain: "projectchatai.vercel.app",
             path: "/",
             httpOnly: true,
             expires
@@ -74,8 +74,8 @@ export const logIn = async (
     res.clearCookie(COOKIE_NAME , {
         signed: true,
         secure: true,
-        sameSite: 'lax',
-        domain: "projectchatai.vercel.app",
+        sameSite: 'none',
+        // domain: "projectchatai.vercel.app",
         path: "/",
         httpOnly: true
     });
@@ -88,8 +88,8 @@ export const logIn = async (
     res.cookie(COOKIE_NAME, token, {
         signed: true,
         secure: true,
-        sameSite: 'lax',
-        domain: "projectchatai.vercel.app",
+        sameSite: 'none',
+        // domain: "projectchatai.vercel.app",
         path: "/",
         httpOnly: true,
         expires
@@ -127,8 +127,8 @@ export const logout = async(
         httpOnly: true,
         signed: true,
         secure: true,
-        sameSite: 'lax',
-        domain: "projectchatai.vercel.app",
+        sameSite: 'none',
+        // domain: "projectchatai.vercel.app",
         path: '/'
     });
     res.status(200).json({message: "logged out"});
